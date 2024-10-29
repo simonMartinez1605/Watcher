@@ -1,12 +1,14 @@
 #Importar librerias y funciones como watchdog,python-dotenv
 import time 
 import shutil 
+#Manejo del sistema 
 import os 
+#Variables de entorno 
 from dotenv import load_dotenv
+#Librerias para el observador de carpetas
 from watchdog.observers import Observer 
 from watchdog.events import FileSystemEventHandler
-#Funcion para leer documentos 
-from pdf import pdf_reader
+#Funcion para convertir los pdf a OCR 
 from create_pdf import new_pdf
 
 #Carga de variables del sistema

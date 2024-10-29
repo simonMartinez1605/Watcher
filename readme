@@ -1,0 +1,10 @@
+DEPENDENCIAS DE LIBRERIAS EXTERNAS: Para estas librerias se utilizan dos motores para el OCR 
+
+Tesseract: https://github.com/UB-Mannheim/tesseract/wiki
+
+ocrmypdf: https://ghostscript.com/releases/gsdnld.html 
+
+LIBRERIAS INTERNAS: Se tienen que descargar para poderse usar 
+
+watchdog, python-dotenv
+
