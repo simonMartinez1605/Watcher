@@ -10,6 +10,8 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 #Funcion para convertir los pdf a OCR 
 from create_pdf import new_pdf
+#Funcion para asignar nombre 
+from anchors import anchors 
 
 #Carga de variables del sistema
 load_dotenv() 
@@ -25,13 +27,21 @@ class event_manager (FileSystemEventHandler):
 
             #Funcion para crear el nuevo OCR
             new_pdf(ruta, ruta) 
+
+            #Asignar nombre 
+            ancla = anchors(ruta)  
+
+            nombre = ancla.replace("\n", "_BC.pdf")
+
+            os.rename(ruta, f"C:/Users/User/Documents/Python/docs_revisados/{nombre}") 
+
+            print(f"Documento movido a C:/Users/User/Documents/Python/docs_revisados/{nombre}")
  
             #Funcion para ingresar el archivo con OCR en otra carpeta
-            read = os.getenv("NEW_PATH")
-            new_path = os.path.join(read, os.path.basename(event.src_path))
-            shutil.move(event.src_path, new_path)
-            print(f"Archivo movido a {new_path}")
-
+            # read = os.getenv("NEW_PATH")
+            # new_path = os.path.join(read, os.path.basename(event.src_path))
+            # shutil.move(event.src_path, new_path)
+            # print(f"Archivo movido a {new_path}") 
 
 #Funcion para el monitoreo de la carpeta 
 def monitor_folder(path):
