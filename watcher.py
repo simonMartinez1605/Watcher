@@ -31,7 +31,7 @@ class event_manager (FileSystemEventHandler):
             #Asignar nombre 
             ancla = anchors(ruta) 
 
-            nombre = ancla.replace("\n", "_BC.pdf")
+            nombre = ancla.replace("\n", ".pdf")
 
             os.rename(ruta, f"C:/Users/User/Documents/Python/docs_revisados/{nombre}") 
 
